@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+MetaTrader5
+pandas
+numpy
+ta
