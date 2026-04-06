@@ -15,7 +15,6 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import MetaTrader5 as mt5
 import pandas as pd
 import numpy as np
 from datetime import datetime, timezone
@@ -46,7 +45,7 @@ VP_BINS      = 30
 
 # ── INICIALIZAR MT5 ────────────────────────────────────────────
 def init_mt5():
-    if not mt5.initialize():
+    if not mt5.positions_get():
         return False
     disponibles = [s.name for s in mt5.symbols_get()]
     global SYMBOL
